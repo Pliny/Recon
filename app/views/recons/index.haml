@@ -1,1 +1,8 @@
-Hi How're you
+= semantic_form_for @recon, :remote => true, :method => :get do |form|
+  = form.inputs do
+    = form.input :company_name, :label => 'My Company'
+    = form.input :idea, :label => 'is Developing'
+    = form.input :audience, :label => 'To Help'
+    = form.input :technology, :label => 'Solve a Problem'
+    = form.action :submit, :label => 'GO'
+
