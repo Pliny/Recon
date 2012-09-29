@@ -17,6 +17,28 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development, :test do
+  gem "guard"
+  # gem "Platform", "~> 0.4.0"
+  # gem "open4", "~> 1.3.0"
+  # gem "popen4", "~> 0.1.2"
+end
+
+group :development do
+  gem 'guard-livereload'
+  gem 'rack-livereload'
+end
+
+group :test do
+  gem "spork", '1.0.0rc3'
+  gem 'guard-spork'
+  gem 'vcr'
+  gem 'fakeweb'
+  gem 'timecop'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+end
+
 gem 'jquery-rails'
 gem 'rspec-rails'
 gem 'haml'
