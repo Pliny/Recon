@@ -27,7 +27,9 @@ module Crunchbase
     end
 
     def company_json name
-      @company_json ||= @client.json("/company/#{name}")
+      name = URI.encode name
+      @company_json ||= Hash.new
+      @company_json[name] ||= @client.json("/company/#{name}")
     end
 
     def search_json query
@@ -54,7 +56,13 @@ module Crunchbase
       @relative_url = url
       response = client.request_get(full_url.request_uri)
       if response.code != "200"
-        raise Unauthorized
+        if response.code == "301" || response.code == "302"
+          begin
+            @redirect_uri = URI response['Location']
+            response = Net::HTTP.get_response(URI(response['Location']))
+          end while response.code == "301" || response.code == "302"
+        end
+        raise Unauthorized if response.code != "200"
       end
       response
     end
@@ -64,7 +72,7 @@ module Crunchbase
     def full_url
       extra = params.try(:map) { |key,value| key + "=" + value }.try(:join, "&")
       extra = "&#{extra}" unless extra.nil?
-      URI.parse "http://api.crunchbase.com/v/1#{@relative_url}.js?api_key=#{access_token}#{extra}"
+      URI.parse "http://#{host}/v/1#{@relative_url}.js?api_key=#{access_token}#{extra}"
     end
 
     def client
@@ -73,6 +81,14 @@ module Crunchbase
 
     def access_token
       URI.encode @access_token
+    end
+
+    def host
+      if false
+        @redirect_uri.host
+      else
+        "api.crunchbase.com"
+      end
     end
   end
 end

@@ -12,7 +12,7 @@
     #open-subtitle="Discover and monitor your competition."
     #start-dashboard-btn
   #madlib{ :class => @form.present? ? 'show' : 'hidden'}
-    = semantic_form_for @recon, :remote => true, :method => :get do |form|
+    = semantic_form_for @recon, :remote => true, :url => search_recons_path do |form|
       = form.inputs do
         = form.input :company_name, :label => 'My company', :placeholder => 'YOUR BUSINESS NAME'
         = form.input :idea, :label => 'is developing', :placeholder => 'YOUR IDEA'

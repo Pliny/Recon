@@ -9,7 +9,8 @@ class ReconsController < ApplicationController
     @form = true
   end
 
-  def create
-
+  def search
+    @recon = Recon.new(params[:recon])
+    @recon.save!
   end
 end
