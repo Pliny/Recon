@@ -1,8 +1,21 @@
-= semantic_form_for @recon, :remote => true, :method => :get do |form|
-  = form.inputs do
-    = form.input :company_name, :label => 'My Company'
-    = form.input :idea, :label => 'is Developing'
-    = form.input :audience, :label => 'To Help'
-    = form.input :technology, :label => 'Solve a Problem'
-    = form.action :submit, :label => 'GO'
+.top-bar
+#image1
+  #logo-open.logo
+  #main-nav
+    %span
+      = link_to "About", '#'
+    %span="/"
+    %span= link_to "Log In", '#'
+  #presentation
+    #open-title="Keep up with the Joneses."
+    #open-subtitle="Discover and monitor your competition."
+    #start-dashboard-btn
+#madlib.hidden
+  = semantic_form_for @recon, :remote => true, :method => :get do |form|
+    = form.inputs do
+      = form.input :company_name, :label => 'My Company (name)'
+      = form.input :idea, :label => 'is Developing (idea)'
+      = form.input :audience, :label => 'To Help (audience)'
+      = form.input :technology, :label => 'Solve a Problem (technologies)'
+      = form.action :submit, :label => 'GO', :inner_html => { :class => 'r-button' }
 
