@@ -1,7 +1,7 @@
 $(document).on( 'click', '#start-dashboard-btn', (event) ->
   $('#image1').addClass('blur')
-  $('#presentation').fadeOut(1000)
+  $('#presentation').fadeOut(500)
   setTimeout(() ->
-    $('#madlib').fadeIn(1000)
-  , 1000)
+    $('#madlib').fadeIn(500)
+  , 500)
 )
