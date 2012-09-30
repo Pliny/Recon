@@ -1,1 +1,15 @@
-= render :partial => 'shared/competition', :collection => @recon.competition, :as => :competitor
+#second-nav
+  #label1
+    Your Competitive Space:
+  #buttons1
+    #start-again
+    #your-dashboard
+.second-nav-dash
+#sub-nav
+  #sub-text
+    Below are the competitors you should be aware of. Remove competitors you do not think are relevant. Once you have defined your competitive array, visit your dashboard.
+  #buttons2
+    #grid-view
+    #bubble-view
+#competitors
+  = render :partial => 'shared/competition', :collection => @recon.competition, :as => :competitor

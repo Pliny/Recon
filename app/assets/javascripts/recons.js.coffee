@@ -7,9 +7,10 @@ $(document).on( 'click', '#start-dashboard-btn', (event) ->
   window.history.pushState({}, "", "recons/new")
 )
 
-$(document).on('click', '#logo-open', (event) ->
+$(document).on('click', '#logo-open, #start-again', (event) ->
   $('#image1').removeClass('blur').addClass('sharp')
-  $('#competitors').hide()
+  $('#results').hide()
+  $('#image1').removeClass('new-height')
   if $('#presentation:visible').length is 0
     $('#madlib').fadeOut(500)
     setTimeout(() ->
@@ -19,8 +20,10 @@ $(document).on('click', '#logo-open', (event) ->
 )
 
 $(document).on('ajax:success', '#new_recon', (evt, data, status, xhr) ->
-  $('#competitors').fadeIn('slow')
-  $('#competitors').html(data)
+  $('#results').fadeIn('slow')
+  $('#results').html(data)
+  $('#madlib').hide()
+  $('#image1, #header').addClass('slider').addClass('new-height')
   $('#competitors').isotope({
     itemSelector: '.competitor',
     layoutMode: 'fitRows'

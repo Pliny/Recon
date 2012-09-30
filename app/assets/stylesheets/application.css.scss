@@ -42,6 +42,13 @@ a:hover { color: $link-hover-color; }
   position: relative;
 }
 
+@mixin slider {
+  transition: height 0.75s ease-in-out;
+  -moz-transition: height 0.75s ease-in-out;
+  -webkit-transition: height 0.75s ease-in-out;
+  -o-transition: height 0.75s ease-in-out;
+}
+
 #image1
 {
   z-index: -1;
@@ -51,6 +58,12 @@ a:hover { color: $link-hover-color; }
   position: absolute;
   top: 0; left: 0;
 }
+
+.new-height {
+  height: 134px ! important;
+}
+
+.slider { @include slider; }
 
 .blur {
   -webkit-animation: sharp-to-blur 1s;
@@ -205,16 +218,27 @@ a:hover { color: $link-hover-color; }
   }
 }
 
+#results {
+  margin-top: 24px;
+}
+#second-nav, #sub-nav {
+  margin-left: 216px;
+  width: 942px;
+}
+.second-nav-dash {
+  margin: 30px auto auto 216px;
+  width: 942px;
+}
 #competitors {
-  margin: 24px 216px;
+  margin-left: 207px;
+  width: 1000px;
 }
 
 .competitor {
   background-color: white;
   width: 201px;
-  min-height: 408px;
   display: inline-block;
-  margin: 8px;
+  margin: 10px;
   padding: 10px;
 }
 
@@ -264,7 +288,7 @@ a:hover { color: $link-hover-color; }
 .c-move {
   background: image-url('btn_move.png') no-repeat center center;
 }
-.c-dash {
+.c-dash,.second-nav-dash {
   height: 2px;
   border-bottom: 2px dotted black;
   margin-top: 24px;
@@ -308,3 +332,75 @@ a:hover { color: $link-hover-color; }
   transition-property:         transform, opacity;
 }
 
+#buttons1,#buttons2 {
+  float: right;
+}
+#start-again {
+  background: image-url('btn_again_up.png') no-repeat center center;
+  display: inline-block;
+  width: 220px;
+  height: 48px;
+}
+#start-again:hover {
+  background: image-url('btn_again_over.png') no-repeat center center;
+}
+#start-again:active {
+  background: image-url('btn_again_down.png') no-repeat center center;
+}
+
+#your-dashboard {
+  background: image-url('btn_dash_up.png') no-repeat center center;
+  display: inline-block;
+  width: 220px;
+  height: 48px;
+  margin-left: 10px;
+}
+#your-dashboard:hover {
+  background: image-url('btn_dash_over.png') no-repeat center center;
+}
+#your-dashboard:active {
+  background: image-url('btn_dash_down.png') no-repeat center center;
+}
+#grid-view {
+  background: image-url('btn_togglegrid_on.png') no-repeat center center;
+  width: 48px;
+  height: 48px;
+}
+.grid-view-off {
+  background: image-url('btn_togglegrid_off.png') no-repeat center center;
+}
+#bubble-view {
+  background: image-url('btn_togglebubble_off.png') no-repeat center center;
+  width: 48px;
+  height: 48px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.bubble-view-on {
+  background: image-url('btn_togglebubble_on.png') no-repeat center center;
+}
+#label1 {
+  display: inline-block;
+  font-size: 1.75em;
+  vertical-align: middle;
+}
+#sub-nav {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+#sub-text {
+  font-family: $san-serif;
+  font-style: normal;
+  font-size: 1em;
+  display: inline-block;
+  width: 560px;
+  color: #666;
+}
+#grid-view {
+  display: inline-block;
+  cursor: pointer;
+}
+
+#bubble-view {
+  display: inline-block;
+}
