@@ -1,0 +1,13 @@
+.competitor
+  .c-logo
+    = image_tag competitor[:logo]
+  .c-name
+    = competitor[:name]
+  .c-description
+    = truncate(strip_tags(competitor[:description]), :length => 150, :separator => ' ', :omission => '...')
+  .c-dash
+  .c-footer
+    .c-close.c-btn
+    .c-external-url.c-btn
+      = link_to '', competitor[:external_url]
+    .c-move.c-btn.right

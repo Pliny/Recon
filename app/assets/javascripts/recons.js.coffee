@@ -9,6 +9,7 @@ $(document).on( 'click', '#start-dashboard-btn', (event) ->
 
 $(document).on('click', '#logo-open', (event) ->
   $('#image1').removeClass('blur').addClass('sharp')
+  $('#competitors').hide()
   if $('#presentation:visible').length is 0
     $('#madlib').fadeOut(500)
     setTimeout(() ->
@@ -18,5 +19,6 @@ $(document).on('click', '#logo-open', (event) ->
 )
 
 $(document).on('ajax:success', '#new_recon', (evt, data, status, xhr) ->
+  $('#competitors').fadeIn('slow')
   $('#competitors').html(data)
 )

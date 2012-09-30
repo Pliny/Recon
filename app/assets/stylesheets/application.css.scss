@@ -20,6 +20,7 @@ $top-bar-color: #b81f29;
 
 .hidden { display: none; }
 .show { display: block; }
+.right { float: right; }
 
 html, body { height: 100%; font-family: $serif; font-style: italic; font-size: 100%; padding: 0; margin: 0; }
 body { background-color: $background-color; }
@@ -36,7 +37,10 @@ a {
 
 a:hover { color: $link-hover-color; }
 
-#header { position: relative; }
+#header {
+  height: 670px;
+  position: relative;
+}
 
 #image1
 {
@@ -191,3 +195,65 @@ a:hover { color: $link-hover-color; }
   }
 }
 
+#competitors {
+  margin: 24px 216px;
+}
+
+.competitor {
+  background-color: white;
+  width: 201px;
+  min-height: 408px;
+  display: inline-block;
+  margin: 8px;
+  padding: 10px;
+}
+
+.c-logo {
+  width: 150px;
+  height: 150px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+
+  img { text-align: center; }
+}
+
+.c-name {
+  color: $link-color;
+  font-size: 1.33em;
+}
+
+.c-description {
+  font-family: $san-serif;
+  font-style: normal;
+  font-size: 1.16em;
+  color: #666;
+}
+
+.c-btn {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  padding-top: 16px;
+}
+
+.c-close {
+  background: image-url('btn_remove.png') no-repeat center center;
+  padding-right: 10px;
+}
+.c-external-url {
+  background: image-url('btn_link.png') no-repeat center center;
+}
+.c-move {
+  background: image-url('btn_move.png') no-repeat center center;
+}
+.c-dash {
+  height: 2px;
+  border-bottom: 2px dotted black;
+  margin-top: 24px;
+}
