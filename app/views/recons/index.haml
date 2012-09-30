@@ -1,5 +1,6 @@
 .top-bar
-#image1
+#header
+  #image1
   #logo-open.logo
   #main-nav
     %span
@@ -10,12 +11,11 @@
     #open-title="Keep up with the Joneses."
     #open-subtitle="Discover and monitor your competition."
     #start-dashboard-btn
-#madlib.hidden
-  = semantic_form_for @recon, :remote => true, :method => :get do |form|
-    = form.inputs do
-      = form.input :company_name, :label => 'My Company (name)'
-      = form.input :idea, :label => 'is Developing (idea)'
-      = form.input :audience, :label => 'To Help (audience)'
-      = form.input :technology, :label => 'Solve a Problem (technologies)'
-      = form.action :submit, :label => 'GO', :inner_html => { :class => 'r-button' }
-
+  #madlib.hidden
+    = semantic_form_for @recon, :remote => true, :method => :get do |form|
+      = form.inputs do
+        = form.input :company_name, :label => 'My company', :placeholder => 'YOUR BUSINESS NAME'
+        = form.input :idea, :label => 'is developing', :placeholder => 'YOUR IDEA'
+        = form.input :audience, :label => 'to help', :placeholder => 'YOUR AUDIENCE'
+        = form.input :technology, :label => 'solve a problem with', :placeholder => 'YOUR TECHNOLOGY'
+        = form.action :submit, :label => '', :button_html => { :id => 'discover-btn' }

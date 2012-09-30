@@ -1,0 +1,177 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+$serif:     'Crimson Text', serif;
+$san-serif: 'PT Sans Narrow', sans-serif;
+$link-color: #d02028;
+$link-hover-color: #ce6e77;
+$background-color: #e5e5e5;
+$top-bar-color: #b81f29;
+
+.hidden { display: none; }
+
+html, body { height: 100%; font-family: $serif; font-style: italic; font-size: 100%; padding: 0; margin: 0; }
+body { background-color: $background-color; }
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  font-size: 24px;
+}
+.top-bar {
+  background-color: $top-bar-color;
+  height: 10px;
+}
+
+a:hover { color: $link-hover-color; }
+
+#header { position: relative; }
+
+#image1
+{
+  z-index: -1;
+  background: image-url('img_header.png') no-repeat center center;
+  width: 1440px;
+  height: 670px;
+  position: absolute;
+  top: 0; left: 0;
+}
+
+.blur {
+  -webkit-animation: sharp-to-blur 2.5s;
+  -ms-animation: sharp-to-blur 2.5s;
+  -moz-animation: sharp-to-blur 2.5s;
+  filter: blur(14px);
+  -webkit-filter: blur(14px);
+  -moz-filter: blur(14px);
+  -o-filter: blur(14px);
+  -ms-filter: blur(14px);
+}
+
+@-webkit-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
+@-moz-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
+@-ms-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
+
+.logo
+{
+  background: image-url('logo.png') no-repeat center center;
+  width: 223px;
+  height: 53px;
+}
+
+#logo-open
+{
+  margin: 48px auto auto 232px;
+  position: absolute;
+}
+
+#presentation {
+  font-style: italic;
+  position: absolute;
+  margin: 276px 0 0 712px;
+}
+
+#open-title {
+  font-size: 54px;
+  font-weight: bold;
+  width: 268px;
+  line-height: 50px;
+  text-align: right;
+  margin-left: 180px;
+}
+
+#open-subtitle {
+  font-size: 32px;
+  margin-top: 10px;
+}
+
+#main-nav {
+  float: right;
+  margin: 60px 250px auto auto;
+  font-size: 24px;
+
+  span { padding: 0 6px; }
+}
+
+#start-dashboard-btn {
+  background: image-url('btn_create_up.png') no-repeat center center;
+  width: 420px;
+  height: 72px;
+  margin-top: 12px;
+  float: right;
+}
+#start-dashboard-btn:hover {
+  background: image-url('btn_creat_over.png') no-repeat center center;
+}
+#start-dashboard-btn:active {
+  background: image-url('btn_create_down.png') no-repeat center center;
+}
+
+#discover-btn {
+  background: image-url('btn_disc_up.png') no-repeat center center;
+  width: 420px;
+  height: 72px;
+  float: right;
+  margin-top: 12px;
+  border: none;
+}
+#discover-btn:hover {
+  background: image-url('btn_disc_over.png') no-repeat center center;
+}
+#discover-btn:active {
+  background: image-url('btn_disc_down.png') no-repeat center center;
+}
+
+@mixin madlib-textbox {
+  border: none;
+  border-bottom: 1px dashed black;
+  text-transform: uppercase;
+  background: transparent;
+  outline:none;
+  font-size: 0.9em;
+  padding-left: 24px;
+}
+
+#madlib {
+  position: relative;
+  top: 171px;
+  left: 257px;
+
+  font-size: 3.4em;
+  input[type="text"],input[type="password"],input[type="email"],input[type="url"] {
+    @include madlib-textbox;
+    width: 450px;
+  }
+  label {
+    text-align: right;
+    padding-right: 14px;
+    display: inline-block;
+    width: 412px;
+  }
+  .input {
+    margin-bottom: 27px;
+  }
+
+  ol,ul { list-style: none; padding: 0; margin: 0; }
+  .inputs { width: 903px; border: none; padding: 0; }
+
+  input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    color: #666;
+    font-family: $san-serif;
+  }
+  input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="url"]:-moz-placeholder, textarea:-moz-placeholder {
+    color: #666;
+    font-family: $san-serif;
+  }
+}
+
