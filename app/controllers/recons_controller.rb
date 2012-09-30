@@ -1,4 +1,5 @@
 class ReconsController < ApplicationController
+  respond_to :html
 
   def index
     @recon = Recon.new
@@ -12,5 +13,9 @@ class ReconsController < ApplicationController
   def search
     @recon = Recon.new(params[:recon])
     @recon.save!
+
+    respond_with @recon do |format|
+      format.html { render 'search', :layout => false }
+    end
   end
 end

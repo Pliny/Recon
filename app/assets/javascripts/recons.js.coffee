@@ -16,3 +16,7 @@ $(document).on('click', '#logo-open', (event) ->
     , 500)
   window.history.pushState({}, "", "/")
 )
+
+$(document).on('ajax:success', '#new_recon', (evt, data, status, xhr) ->
+  $('#competitors').html(data)
+)
