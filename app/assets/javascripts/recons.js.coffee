@@ -4,6 +4,7 @@ $(document).on( 'click', '#start-dashboard-btn', (event) ->
   setTimeout(() ->
     $('#madlib').fadeIn(500)
   , 500)
+  window.history.pushState({}, "", "recons/new")
 )
 
 $(document).on('click', '#logo-open', (event) ->
@@ -13,4 +14,5 @@ $(document).on('click', '#logo-open', (event) ->
     setTimeout(() ->
       $('#presentation').fadeIn(500)
     , 500)
+  window.history.pushState({}, "", "/")
 )
