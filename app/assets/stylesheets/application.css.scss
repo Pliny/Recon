@@ -58,9 +58,24 @@ a:hover { color: $link-hover-color; }
   -ms-filter: blur(14px);
 }
 
+.sharp {
+  -webkit-animation: blur-to-sharp 1s;
+  -ms-animation: blur-to-sharp 1s;
+  -moz-animation: blur-to-sharp 1s;
+  filter: blur(0);
+  -webkit-filter: blur(0);
+  -moz-filter: blur(0);
+  -o-filter: blur(0);
+  -ms-filter: blur(0);
+}
+
 @-webkit-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
 @-moz-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
 @-ms-keyframes sharp-to-blur { 0% { -webkit-filter: blur(0); } 100% { -webkit-filter: blur(14px); } }
+
+@-webkit-keyframes blur-to-sharp { 0% { -webkit-filter: blur(14px); } 100% { -webkit-filter: blur(0); } }
+@-moz-keyframes blur-to-sharp { 0% { -webkit-filter: blur(14px); } 100% { -webkit-filter: blur(0); } }
+@-ms-keyframes blur-to-sharp { 0% { -webkit-filter: blur(14px); } 100% { -webkit-filter: blur(0); } }
 
 .logo
 {
@@ -72,6 +87,7 @@ a:hover { color: $link-hover-color; }
 #logo-open
 {
   margin: 48px auto auto 232px;
+  cursor: pointer;
   position: absolute;
 }
 
