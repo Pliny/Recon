@@ -2,7 +2,7 @@ class Recon < ActiveRecord::Base
   attr_accessible :company_name, :idea, :audience, :technology
   attr_accessor :competition
 
-  # after_create :fetch_competitors
+  after_create :fetch_competitors
 
   private
 

@@ -21,4 +21,14 @@ $(document).on('click', '#logo-open', (event) ->
 $(document).on('ajax:success', '#new_recon', (evt, data, status, xhr) ->
   $('#competitors').fadeIn('slow')
   $('#competitors').html(data)
+  $('#competitors').isotope({
+    itemSelector: '.competitor',
+    layoutMode: 'fitRows'
+  })
 )
+
+$(document).on('click', '.c-close', (event) ->
+  $element = $(this).parent().parent()
+  $('#competitors').isotope( 'remove', $element )
+)
+

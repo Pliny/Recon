@@ -4,10 +4,10 @@
   .c-name
     = competitor[:name]
   .c-description
-    = truncate(strip_tags(competitor[:description]), :length => 150, :separator => ' ', :omission => '...')
+    = truncate(strip_tags(competitor[:description].html_safe), :length => 150, :separator => ' ', :omission => '...')
   .c-dash
   .c-footer
     .c-close.c-btn
-    .c-external-url.c-btn
-      = link_to '', competitor[:external_url]
+    %a{:href => competitor[:external_link], :target => '_blank'}
+      .c-external-url.c-btn
     .c-move.c-btn.right
