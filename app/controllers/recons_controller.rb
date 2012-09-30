@@ -6,6 +6,7 @@ class ReconsController < ApplicationController
 
   def new
     @recon = Recon.new
+    @form = true
   end
 
   def create

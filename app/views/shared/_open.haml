@@ -1,0 +1,22 @@
+.top-bar
+#header
+  #image1{ :class => @form.present? ? 'blur' : 'sharp'}
+  #logo-open.logo
+  #main-nav
+    %span
+      = link_to "About", '#'
+    %span="/"
+    %span= link_to "Log In", '#'
+  #presentation{ :class => @form.present? ? 'hidden' : 'show'}
+    #open-title="Keep up with the Joneses."
+    #open-subtitle="Discover and monitor your competition."
+    #start-dashboard-btn
+  #madlib{ :class => @form.present? ? 'show' : 'hidden'}
+    = semantic_form_for @recon, :remote => true, :method => :get do |form|
+      = form.inputs do
+        = form.input :company_name, :label => 'My company', :placeholder => 'YOUR BUSINESS NAME'
+        = form.input :idea, :label => 'is developing', :placeholder => 'YOUR IDEA'
+        = form.input :audience, :label => 'to help', :placeholder => 'YOUR AUDIENCE'
+        = form.input :technology, :label => 'solve a problem with', :placeholder => 'YOUR TECHNOLOGY'
+        = form.action :submit, :label => '', :button_html => { :id => 'discover-btn' }
+

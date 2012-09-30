@@ -19,6 +19,7 @@ $background-color: #e5e5e5;
 $top-bar-color: #b81f29;
 
 .hidden { display: none; }
+.show { display: block; }
 
 html, body { height: 100%; font-family: $serif; font-style: italic; font-size: 100%; padding: 0; margin: 0; }
 body { background-color: $background-color; }
