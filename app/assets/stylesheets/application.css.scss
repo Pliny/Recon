@@ -367,7 +367,7 @@ a:hover { color: $link-hover-color; }
   height: 48px;
 }
 .grid-view-off {
-  background: image-url('btn_togglegrid_off.png') no-repeat center center;
+  background: image-url('btn_togglegrid_off.png') no-repeat center center ! important;
 }
 #bubble-view {
   background: image-url('btn_togglebubble_off.png') no-repeat center center;
@@ -377,7 +377,7 @@ a:hover { color: $link-hover-color; }
   cursor: pointer;
 }
 .bubble-view-on {
-  background: image-url('btn_togglebubble_on.png') no-repeat center center;
+  background: image-url('btn_togglebubble_on.png') no-repeat center center ! important;
 }
 #label1 {
   display: inline-block;
@@ -403,4 +403,15 @@ a:hover { color: $link-hover-color; }
 
 #bubble-view {
   display: inline-block;
+}
+
+#bubble-page {
+  background: image-url('bchart3.png') no-repeat center center;
+  width: 940px;
+  height: 480px;
+}
+#dashboard-page {
+  background: image-url('detail.png') no-repeat center center;
+  width: 1440px;
+  height: 1440px;
 }

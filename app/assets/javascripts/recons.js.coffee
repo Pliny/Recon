@@ -35,3 +35,15 @@ $(document).on('click', '.c-close', (event) ->
   $('#competitors').isotope( 'remove', $element )
 )
 
+$(document).on('click', '#bubble-view', (event) ->
+  $(this).addClass('bubble-view-on')
+  $('#grid-view').addClass('grid-view-off')
+)
+
+$(document).on('click', '#grid-view', (event) ->
+  $('#bubble-view').removeClass('bubble-view-on')
+  $(this).removeClass('grid-view-off')
+)
+$(document).on('ajax:success', '#bubble-view', (evt, data, status, xhr) ->
+  $('#competitors').html(data)
+)

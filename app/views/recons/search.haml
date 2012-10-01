@@ -3,13 +3,15 @@
     Your Competitive Space:
   #buttons1
     #start-again
-    #your-dashboard
+    %a{:href => dashboards_path}
+      #your-dashboard
 .second-nav-dash
 #sub-nav
   #sub-text
     Below are the competitors you should be aware of. Remove competitors you do not think are relevant. Once you have defined your competitive array, visit your dashboard.
   #buttons2
     #grid-view
+    %a{:href => bubbles_path }
     #bubble-view
 #competitors
   = render :partial => 'shared/competition', :collection => @recon.competition, :as => :competitor
