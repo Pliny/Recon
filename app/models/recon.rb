@@ -15,8 +15,9 @@ class Recon < ActiveRecord::Base
 
       json['competitions'].map { |c| c['competitor'] }.each do |competitor|
         begin
+          image = competitor['image'].present? ? competitor['image']['available_sizes'].first.second : nil
           @competition.push({
-            :logo           => "http://www.crunchbase.com/#{competitor['image']['available_sizes'].first.second}",
+            :logo           => "http://www.crunchbase.com/#{image}",
             :name           => competitor['name'],
             :external_link  => crunchbase.company(competitor['name'])['homepage_url'],
             :description    => crunchbase.company(competitor['name'])['overview']

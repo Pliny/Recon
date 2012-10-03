@@ -4,7 +4,7 @@
   .c-name
     = competitor[:name]
   .c-description
-    = truncate(strip_tags(competitor[:description].html_safe), :length => 150, :separator => ' ', :omission => '...')
+    = truncate(strip_tags(competitor[:description].try(:html_safe)), :length => 150, :separator => ' ', :omission => '...')
   .c-dash
   .c-footer
     .c-close.c-btn
