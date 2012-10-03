@@ -10,7 +10,7 @@ class Recon < ActiveRecord::Base
     crunchbase = Crunchbase::User.new(Crunchbase::Client.new(Crunchbase::API_KEY))
     @competition = Array.new
     # first, see if company name exists in Crunchbase
-    if Company.where("name ilike ?", company_name).present?
+    # if Company.where("name ilike ?", company_name).present?
       json = crunchbase.company(company_name)
 
       json['competitions'].map { |c| c['competitor'] }.each do |competitor|
@@ -25,6 +25,6 @@ class Recon < ActiveRecord::Base
         rescue Crunchbase::Unauthorized
         end
       end
-    end
+    # end
   end
 end
